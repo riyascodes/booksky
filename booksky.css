@@ -175,3 +175,9 @@
 .popup textarea::placeholder{
     color: white;
 }
+.book-container h2{
+    color: rgb(0, 4, 255);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
