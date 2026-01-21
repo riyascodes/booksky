@@ -57,21 +57,33 @@ addbook.addEventListener("click",function(){
 
     
 })
+let searchInput = document.getElementById("searchInput");
 
-function renderbooks(){
-    container.innerHTML="";
-    books.forEach(book =>{
+searchInput.addEventListener("input", function(){
+    let keyword = searchInput.value.toLowerCase();
+    let filteredBooks = books.filter(book =>
+        book.title.toLowerCase().includes(keyword) ||
+        book.author.toLowerCase().includes(keyword)
+    );
+    renderbooks(filteredBooks);
+});
+
+
+function renderbooks(bookList = books){
+    container.innerHTML = "";
+    bookList.forEach(book =>{
         let div = document.createElement("div");
-        div.className="book-container";
-        div.innerHTML=`
-        <h2>${book.title}</h2>
-        <h5>${book.author}</h5>
-        <p>${book.description}</p>
-        <button onclick="deletebook(${book.id})">Delete</button>
-        `
+        div.className = "book-container";
+        div.innerHTML = `
+            <h2>${book.title}</h2>
+            <h5>${book.author}</h5>
+            <p>${book.description}</p>
+            <button onclick="deletebook(${book.id})">Delete</button>
+        `;
         container.appendChild(div);
-    })
+    });
 }
+
 
 function deletebook(id){
     books=books.filter(book => book.id!==id);
