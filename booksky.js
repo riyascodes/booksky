@@ -71,6 +71,16 @@ searchInput.addEventListener("input", function(){
 
 function renderbooks(bookList = books){
     container.innerHTML = "";
+
+    let emptyMessage = document.getElementById("emptyMessage");
+
+    if(bookList.length === 0){
+        emptyMessage.style.display = "block";
+        return;
+    }else{
+        emptyMessage.style.display = "none";
+    }
+
     bookList.forEach(book =>{
         let div = document.createElement("div");
         div.className = "book-container";
@@ -83,6 +93,8 @@ function renderbooks(bookList = books){
         container.appendChild(div);
     });
 }
+
+
 
 
 function deletebook(id){

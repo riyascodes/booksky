@@ -215,3 +215,39 @@ body{
     border-color: #6D28D9;
     box-shadow: 0 0 0 3px rgba(124,58,237,0.25);
 }
+
+/* Empty State */
+.empty-state{
+    display: none;
+    text-align: center;
+    background: #FFFFFF;
+    max-width: 420px;
+    margin: 40px auto;
+    padding: 30px 20px;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    border: 2px dashed #DDD6FE;
+}
+
+.empty-icon{
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.empty-state h3{
+    color: #7C3AED;
+    margin-bottom: 6px;
+}
+
+.empty-state p{
+    color: #4B5563;
+    font-size: 14px;
+}
+
+.empty-state span{
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 13px;
+    color: #6D28D9;
+    font-weight: 600;
+}
